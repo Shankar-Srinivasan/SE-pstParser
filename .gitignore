@@ -1,0 +1,9 @@
+steel-eye-sink/target
+*.class
+*.project
+*.classpath
+*.settings
+*.DS_Store
+*.idea
+arch/
+test/
