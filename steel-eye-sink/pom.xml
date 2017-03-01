@@ -39,29 +39,45 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.8.6</version>
     </dependency>
-
-    <!-- smile (binary JSON). Other artifacts in this group do other formats. -->
     <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-smile</artifactId>
-      <version>2.8.6</version>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-lambda-java-core</artifactId>
+      <version>1.1.0</version>
     </dependency>
-    <!-- JAX-RS provider -->
     <dependency>
-       <groupId>com.fasterxml.jackson.jaxrs</groupId>
-       <artifactId>jackson-jaxrs-json-provider</artifactId>
-       <version>2.8.6</version>
-    </dependency>
-    <!-- Support for JAX-B annotations as additional configuration -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-jaxb-annotations</artifactId>
-      <version>2.8.6</version>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-lambda-java-events</artifactId>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
     	<groupId>com.pff</groupId>
     	<artifactId>java-libpst</artifactId>
     	<version>0.9.5-SNAPSHOT</version>
     </dependency>
+    <dependency>
+    	<groupId>com.amazonaws</groupId>
+    	<artifactId>aws-lambda-java-log4j</artifactId>
+    	<version>1.0.0</version>
+	</dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <createDependencyReducedPom>false</createDependencyReducedPom>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
