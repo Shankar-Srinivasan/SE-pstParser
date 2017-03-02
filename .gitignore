@@ -7,3 +7,4 @@ steel-eye-sink/target
 *.idea
 arch/
 test/
+*outputfile.txt
